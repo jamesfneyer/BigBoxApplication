@@ -1,11 +1,18 @@
-package bigbox.db;
+package bigbox.stores.db;
 
 import java.util.ArrayList;
 
 import bigbox.business.Store;
+import neyer.db.DBException;
 
 public interface StoreReader {
-	Store getStoreByDivisionAndStoreNumber(String indiv, String inStoreNbr);
-	ArrayList<Store>getAllStores();
-	ArrayList<Store>getAllStoresByDivision(String inDiv);
+
+	Store get(String storeNumber) throws DBException;
+
+	ArrayList<Store> getDivStore(String divisionCode) throws DBException;
+
+	int getStoreID(String storeNumber) throws DBException;
+
+	ArrayList<Store> getAllStores() throws DBException;
+
 }

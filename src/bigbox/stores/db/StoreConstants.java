@@ -1,4 +1,4 @@
-package bigbox.db;
+package bigbox.stores.db;
 
 public interface StoreConstants {
 	final int DIVISION_LENGTH = 3;

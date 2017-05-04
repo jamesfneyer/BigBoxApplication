@@ -1,15 +1,15 @@
 package bigbox.business;
 
-public abstract class Facility {
-	private int id;
+public class Division {
+	private String DivNumber;
 	private String name;
 	private String address;
 	private String city;
 	private String state;
 	private String zipcode;
 
-	public Facility() {
-		id = 0;
+	public Division() {
+		DivNumber = "";
 		name = "";
 		address = "";
 		city = "";
@@ -17,32 +17,24 @@ public abstract class Facility {
 		zipcode = "";
 	}
 
-	public Facility(int i, String dn, String sn, double s, String n, String a, String c, String st, String z) {
-		setId(i);
+	public Division(String d, String n, String a, String c, String s, String z) {
+		setDivNumber(d);
 		setName(n);
+		;
 		setAddress(a);
+		;
 		setCity(c);
-		setState(st);
+		;
+		setState(s);
 		setZipcode(z);
-
 	}
 
-	public Facility(int i, int dn, String sn, double s, String n, String a, String c, String st, String z) {
-		setId(i);
-		setName(n);
-		setAddress(a);
-		setCity(c);
-		setState(st);
-		setZipcode(z);
-
+	public String getDivNumber() {
+		return DivNumber;
 	}
 
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
+	public void setDivNumber(String divNumber) {
+		DivNumber = divNumber;
 	}
 
 	public String getName() {
@@ -83,17 +75,6 @@ public abstract class Facility {
 
 	public void setZipcode(String zipcode) {
 		this.zipcode = zipcode;
-	}
-
-	@Override
-	public String toString() {
-		String s = "\n" + "[Facility: id= " + id + "\n name: " + name + "\n address= " + address + "\n city = " + city
-				+ "\n state= " + state + "\n zip= " + zipcode + "]" + "\n";
-		return s;
-	}
-
-	public String getDisplayText() {
-		return null;
 	}
 
 }

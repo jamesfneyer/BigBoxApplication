@@ -1,6 +1,5 @@
-package bigbox.db;
+package bigbox.stores.db;
 
-public interface StoreDAO extends StoreWriter, StoreReader, StoreConstants{
-	
+public interface StoreDAO extends StoreWriter, StoreReader, StoreConstants {
 
 }

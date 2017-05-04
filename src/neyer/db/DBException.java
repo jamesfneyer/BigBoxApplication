@@ -6,9 +6,10 @@ package neyer.db;
  */
 @SuppressWarnings("serial")
 public class DBException extends Exception {
-    DBException() {}
-    
-    DBException(Exception e) {
-        super(e);
-    }
+	DBException() {
+	}
+
+	public DBException(Exception e) {
+		super(e);
+	}
 }

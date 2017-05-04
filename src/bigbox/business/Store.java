@@ -1,36 +1,50 @@
 package bigbox.business;
+
 import java.text.NumberFormat;
 
-public final class Store extends Facility{
+public final class Store extends Facility {
 	private double sales;
 	private String storenumber;
 	private String divisionnumber;
-	
-	public Store(){
+	private int divisionID;
+
+	public Store() {
 		super();
 		sales = 0;
 		storenumber = "";
-		divisionnumber="";
+		divisionnumber = "";
 	}
-	
-	public Store(int i, String dn, String sn, double s, String n, String a, String c, String st, String z){
+
+	public Store(int i, String dn, String sn, double s, String n, String a, String c, String st, String z) {
 		super(i, dn, sn, s, n, a, c, st, z);
 		setSales(s);
 		setStorenumber(sn);
 		setDivisionnumber(dn);
 	}
-	/*public Store(String dn, double s, String c, String st){
-		super(dn, s, c, st);
-		
-	}*/
+
+	public Store(int i, int dn, String sn, double s, String n, String a, String c, String st, String z) {
+		super(i, dn, sn, s, n, a, c, st, z);
+		setSales(s);
+		setStorenumber(sn);
+		setDivisionID(dn);
+	}
+
+	private void setDivisionID(int dn) {
+		divisionID = dn;
+	}
+
+	public int getDivisionID() {
+		return divisionID;
+	}
+
 	public double getSales() {
 		return sales;
 	}
-	
+
 	public void setSales(double sales) {
 		this.sales = sales;
 	}
-	
+
 	public String getStorenumber() {
 		return storenumber;
 	}
@@ -46,16 +60,16 @@ public final class Store extends Facility{
 	public void setDivisionnumber(String divisionnumber) {
 		this.divisionnumber = divisionnumber;
 	}
-	public String getFormattedSales()
-    {
-        NumberFormat currency = NumberFormat.getCurrencyInstance();
-        return currency.format(sales);
-    }
-	
+
+	public String getFormattedSales() {
+		NumberFormat currency = NumberFormat.getCurrencyInstance();
+		return currency.format(sales);
+	}
+
 	@Override
-	public String toString()
-	{
-		return "\n"+"[Store: store#= "+storenumber+"\n div#= "+divisionnumber+"\n sales= "+getFormattedSales()+"]"+"\n \n"+super.toString();
+	public String toString() {
+		return "\n" + "[Store: store#= " + storenumber + "\n div#= " + divisionnumber + "]" + "\n \n"
+				+ super.toString();
 	}
 
 }

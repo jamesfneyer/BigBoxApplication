@@ -1,9 +1,13 @@
-package bigbox.db;
+package bigbox.stores.db;
 
 import bigbox.business.Store;
+import neyer.db.DBException;
 
 public interface StoreWriter {
-	boolean addStore(Store inStore);
-	boolean deleteStore(Store inStore);
-	boolean updateStore(Store inStore, String updateObject, String updatedInfo);
+
+	void add(Store store) throws DBException;
+
+	void update(Store store) throws DBException;
+
+	void delete(Store product) throws DBException;
 }
